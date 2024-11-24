@@ -17,8 +17,6 @@ class Logger
 
     public function log(string $level, string $message): void
     {
-        // Mise en gras si le texte le nécessite
-        $message = $this->bold($message);
 
         // Log selon le niveau fourni
         switch (strtolower($level)) {
@@ -41,7 +39,7 @@ class Logger
     }
 
     // Fonction pour appliquer le format de texte en gras
-    private function bold(string $message): string
+    public function bold(string $message): string
     {
         // Pour les consoles qui supportent les codes ANSI
         // Exemple pour console (si votre environnement CLI le supporte) :
